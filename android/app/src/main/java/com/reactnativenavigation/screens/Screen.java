@@ -9,6 +9,7 @@ import platformSpecific from './deprecated/platformSpecificDeprecated';
 import Navigation from './Navigation';
 import _ from 'lodash';
 
+
 const NavigationSpecific = {
     push: platformSpecific.navigatorPush,
     pop: platformSpecific.navigatorPop,
