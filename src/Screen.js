@@ -156,14 +156,10 @@ class Navigator {
     }
 
     duplicated(params) {
-        if (Date.now() - this._lastAction.timestamp < 5000
-            && _.isEqual(params, this._lastAction.params)) {
-            return true;
-        } else {
-            this._lastAction = {params, timestamp: Date.now()};
-            return false;
-        }
-    }
+    var duplicated = Date.now() - this._lastAction.timestamp < 1000;
+    this._lastAction = {timestamp: Date.now()};
+    return duplicated;
+  }
 
     handleDeepLink(params = {}) {
         Navigation.handleDeepLink(params);
